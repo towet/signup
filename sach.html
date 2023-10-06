@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="form.css"> <!-- Link to your external CSS stylesheet -->
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="dec">
+    <!-- Add this form to your HTML -->
+    <form id="search-form">
+        <div class="field">
+            <input type="text" name="registration_number" class="input-field" placeholder="Search by Registration Number">
+        </div>
+        <div class="field">
+            <button type="submit" class="button1">Search</button>
+        </div>
+    </form>
+
+    <!-- Container to display search results -->
+    <div id="search-results"></div>
+
+    <!-- JavaScript code for handling the form submission and displaying results -->
+    <script>
+        $(document).ready(function () {
+            $("#search-form").submit(function (event) {
+                event.preventDefault();
+
+                // Send an AJAX request to the PHP script
+                $.ajax({
+                    type: "POST",
+                    url: "search_contacts.php",
+                    data: $(this).serialize(), // Serialize the form data
+                    dataType: "json",
+                    success: function (response) {
+                        // Clear previous search results
+                        $("#search-results").empty();
+
+                        if (response.length > 0) {
+                            // Loop through the results and display each contact
+                            $.each(response, function (index, contact) {
+                                var contactCard = '<div class="card m-auto text-gray-300 w-[clamp(260px,80%,300px)] hover:brightness-90 transition-all cursor-pointer group bg-gradient-to-tl from-gray-900 to-gray-950 hover:from-gray-800 hover:to-gray-950 border-r-2 border-t-2 border-gray-900 m-4 rounded-lg overflow-hidden relative">';
+                                contactCard += '<div class="px-8 py-10">';
+                                contactCard += '<div class="bg-orange-500 w-10 h-10 rounded-full rounded-tl-none mb-4 group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-red-900 transition-all"></div>';
+                                contactCard += '<div class="uppercase font-bold text-xl">' + contact.name + '</div>';
+                                contactCard += '<div class="text-gray-300 uppercase tracking-widest">' + contact.email + '</div>';
+                                contactCard += '<div class="text-gray-400 mt-8">';
+                                contactCard += '<p class="font-bold">' + contact.mobile + '</p>';
+                                contactCard += '<p>' + contact.address + '</p>';
+                                contactCard += '</div>';
+                                contactCard += '</div>';
+                                contactCard += '<div class="h-2 w-full bg-gradient-to-l via-yellow-500 group-hover:blur-xl blur-2xl m-auto rounded transition-all absolute bottom-0"></div>';
+                                contactCard += '<div class="h-0.5 group-hover:w-full bg-gradient-to-l via-yellow-950 group-hover:via-yellow-500 w-[70%] m-auto rounded transition-all"></div>';
+                                contactCard += '</div>';
+
+                                // Append the contact card to the results container
+                                $("#search-results").append(contactCard);
+                            });
+                        } else {
+                            $("#search-results").html("No contacts found with the provided registration number.");
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+</body>
+</html>

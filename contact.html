@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <link rel="stylesheet" href="form.css"> <!-- Link to your external CSS stylesheet -->
+</head>
+<body class="dec">
+    <div class="card">
+        <div class="card2">
+            <form class="form" method="post" action="contact.php">
+                <p id="heading">Enter Contact Information</p>
+                <div class="field">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <!-- Your SVG path for the icon -->
+                    </svg>
+                    <input type="text" class="input-field" name="mobile" placeholder="Mobile Phone Number" required>
+                </div>
+                <div class="field">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <!-- Your SVG path for the icon -->
+                    </svg>
+                    <input type="text" class="input-field" name="email" placeholder="Email" required>
+                </div>
+                <div class="field">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <!-- Your SVG path for the icon -->
+                    </svg>
+                    <input type="text" class="input-field" name="address" placeholder="Address" required>
+                </div>
+                <div class="field">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <!-- Your SVG path for the icon -->
+                    </svg>
+                    <input type="text" class="input-field" name="registration_number" placeholder="Registration Number" required>
+                </div>
+                <div class="btn">
+                    <button class="button1" type="submit">Save</button>
+                     <button class="button2" id="closeButton">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to close the window when the "Close" button is clicked
+        document.getElementById("closeButton").addEventListener("click", function() {
+            window.close();
+        });
+    </script>
+</body>
+</html>

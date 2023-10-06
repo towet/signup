@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Card</title>
+  <style>
+    .card {
+      width: 250px;
+      height: 320px;
+      padding: 5px;
+      background-image: linear-gradient(#ca1eb3, #FD2E24, #FFD701 70%);
+    }
+
+    .card__content {
+      background-color: #212121cf;
+      backdrop-filter: blur(50px);
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+    }
+
+    .card-details {
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+    }
+
+    .text-body {
+      margin-top: -35px;
+      color: #ff8d79;
+      text-align: center;
+    }
+
+    .text-title {
+      margin-top: -125px;
+      color: #ff4d7d;
+      font-size: 1.75em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .sunsetsvg {
+      width: 313px;
+      margin-left: -51.9px;
+      margin-top: -165px;
+      fill: black;
+    }
+
+    #sun {
+      fill: url(#MyGradient);
+    }
+
+    /* Add this CSS to center the card on the page */
+    .card {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card__content">
+      <div class="card-details">
+        <svg class="sunsetsvg" viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="MyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff4d7d" />
+              <stop offset="100%" stop-color="#ca1eb3" />
+            </linearGradient>
+          </defs>
+          <path id="sun" fill="black" d="M50,50c-21.6,0-39-17.4-39-39c0-21.6,17.4-39,39-39c21.6,0,39,17.4,39,39c0,21.6-17.4,39-39,39z" />
+        </svg>
+        <h1 class="text-title">Contact Card</h1>
+        <p class="text-body">
+          Mobile: +1-555-555-5555<br>
+          Email: john.doe@example.com<br>
+          Address: 123 Main Street, Anytown, CA 91234
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
