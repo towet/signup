@@ -1,5 +1,5 @@
 <?php
-// Database connection details
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -19,13 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (name, username, email, password) VALUES ('$name', '$username', '$email', '$hashed_password')";
+    $sql = "INSERT INTO register ( name, username, email, password) VALUES ('$name', '$username', '$email', '$hashed_password')";
 
     if ($conn->query($sql) === TRUE) {
-        // Redirect to login.html after successful signup
+        
         echo '<meta http-equiv="refresh" content="0;url=login.html">';
 
-        exit(); // Terminate script execution after redirection
+        exit(); 
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

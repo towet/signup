@@ -139,7 +139,7 @@ body {
   
                   var(--border-width),
       
-                  /* top-right */
+               
                   calc(100% - var(--border-width))
   
                    var(--border-width),
@@ -148,11 +148,10 @@ body {
   
                   calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
       
-                  /* bottom-right 1 */
                   calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) 
                   calc(100% - var(--border-width)),
   
-                  /* bottom-right 2 */
+                  
                   calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
                   calc(100% - var(--border-width)));
     transition: 200ms;

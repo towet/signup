@@ -4,8 +4,37 @@
     <link rel="stylesheet" type="text/css" href="home.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>welcome aboard</title>
-    <!-- Add your CSS stylesheets and other head content here -->
+    <title>Welcome Aboard</title>
+    <style>
+  
+        .member-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .member-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .tick {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #e9ec06; 
+            margin-right: 10px;
+        }
+
+        .member-name {
+            font-size: 18px;
+            color: #0ce1f0;
+        }
+
+        .message-box {
+            margin-top: -250px; 
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -18,19 +47,42 @@
                 <path d="M281,801 L383,861.025276 L383,979.21169 L281,1037 L179,979.21169 L179,861.025276 L281,801 Z" id="Polygon-5" stroke="#36B455" stroke-width="6" sketch:type="MSShapeGroup"></path>
             </g>
         </svg>
+        <svg width="380px" height="500px" viewBox="0 0 837 1045" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+          
+        </svg>
         <div class="message-box">
-            <h1>group C</h1>
+            <h1>Group C</h1>
             <p>Welcome Aboard</p>
+            <ul class="member-list" style="color: yellow;">
+                <li class="member-list-item">
+                    <div class="tick"></div>
+                    <span class="member-name">Franklin Towet BMIT/MG/1873/09/20</span>
+                </li>
+                <li class="member-list-item">
+                    <div class="tick"></div>
+                    <span class="member-name">Kennedy Fadhil BMIT/MG/1964/09/20</span>
+                </li>
+                <li class="member-list-item">
+                    <div class="tick"></div>
+                    <span class="member-name">Wandabi Allan BMIT/MG/0795/09/20</span>
+                </li>
+                <li class="member-list-item">
+                    <div class="tick"></div>
+                    <span class="member-name">Jelimo Faith BMIT/MG/1444/09/20</span>
+                </li>
+                <li class="member-list-item">
+                    <div class="tick"></div>
+                    <span class="member-name">Humprey Kariuki BMIT/MG/1996/09/20</span>
+                </li>
+            </ul>
             <div class="buttons-con">
                 <div class="action-link-wrap">
                     <a href="contact.html" class="link-button link-back-button">Enter contact information</a>
-                    <a href="login.html" class="button">Go to login</a>
+                    <a href="login.html" class="button">log out</a>
                 </div>
-                    <a href="search.html"><button class="btn" style="margin-top: 60px;">Search Contact</button></a>
+                <a href="search.html"><button class="btn" style="margin-top: 20px;">Search Contact</button></a>
             </div>
-            
         </div>
     </div>
-    <!-- Add your scripts and other body content here -->
 </body>
 </html>
